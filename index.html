@@ -1,0 +1,38 @@
+<html>
+
+<body>
+    <br>
+    <p><b>ITEMS</b></p>
+    <br>
+    <img id="guitar" style="height: 300px;width: 300px;" src="guitar.png" onclick="findChosen(this.src)"></img>
+    <img id="drums" style="height: 300px;width: 300px;" src="drums.png" onclick="findChosen(this.src)"></img>
+    <br>
+    <p><b>SELECTED ITEM</b></p>
+    <br>
+    <img id="chosenItem" alt="Nothing has been chosen yet"></img>
+    <br>
+    <br>
+    <br>
+    <p><b>CART ITEMS</b></p>
+    <br>
+    <button onclick="addToCart()">Add to Cart</button>
+    <br>
+    <img id="cartItem0" alt="Empty Cart Slot"></img>
+    <img id="cartItem1" alt="Empty Cart Slot"></img>
+    <img id="cartItem2" alt="Empty Cart Slot"></img>
+
+    <script>
+        var cartArray = new Array();
+        function addToCart() {
+            cartArray.push(document.getElementById("chosenItem").src);
+            document.getElementById("cartItem0").src = cartArray[0];
+            document.getElementById("cartItem1").src = cartArray[1];
+            document.getElementById("cartItem2").src = cartArray[2];
+        }
+        function findChosen(image) {
+            document.getElementById("chosenItem").src = image;
+        }
+    </script>
+</body>
+
+</html>
